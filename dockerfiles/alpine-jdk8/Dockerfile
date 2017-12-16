@@ -7,7 +7,7 @@ FROM alpine:3.6
 # modified to use newer versions
 # and hopefully updated as we go
 
-MAINTAINER Sid Carter <geek@sidcarter.com>
+LABEL maintainer "Sid Carter <geek@sidcarter.com>"
 
 # glibc and java environment variables
 ENV ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases/download" \

@@ -1,6 +1,6 @@
 FROM debian:sid
 
-MAINTAINER Sid Carter <me@sidcarter.com>
+LABEL maintainer "Sid Carter <me@sidcarter.com>"
 
 # do all in one step
 RUN set -ex && \
