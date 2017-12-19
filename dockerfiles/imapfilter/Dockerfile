@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-MAINTAINER Sid Carter <me@sidcarter.com>
+LABEL maintainer "Sid Carter <me@sidcarter.com>"
 
 ENV IMAPFILTER_VERSION v2.6.11
 
@@ -22,4 +22,6 @@ RUN set -ex && \
     make install && \
     apk del .build-dependencies
 
-ENTRYPOINT ["imapfilter"]
+COPY ./startup.sh .
+
+CMD ["imapfilter"]
