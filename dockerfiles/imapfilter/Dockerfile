@@ -15,9 +15,8 @@ RUN set -ex && \
 	pcre-dev \
 	alpine-sdk \
 	git && \
-    git clone https://github.com/lefcha/imapfilter.git && \
+    git clone --branch ${IMAPFILTER_VERSION} https://github.com/lefcha/imapfilter.git && \
     cd imapfilter && \
-    git checkout tags/${IMAPFILTER_VERSION} && \
     make all && \
     make install && \
     apk del .build-dependencies
