@@ -6,7 +6,6 @@ ENV PATH /go/bin:/usr/local/go/bin:$PATH
 ENV GOPATH /go
 ENV CFSSL_VERSION 1.2.0
 
-# do all in one step
 RUN buildDeps=' \
 		bash \
 		go \
