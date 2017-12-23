@@ -15,8 +15,6 @@ RUN buildDeps=' \
 		linux-headers \
     ' \
     set -x; \
-    addgroup -S redis; \
-    adduser -S -G redis redis; \
     apk upgrade --update; \
     apk add --no-cache $buildDeps; \
     git clone --branch ${REDIS_VERSION} ${REPO_URI}; \
@@ -27,6 +25,10 @@ RUN buildDeps=' \
     make -C redis; \
     make -C redis install; \
     rm -rf redis; \
+    addgroup -S redis; \
+    adduser -S -G redis redis; \
+    mkdir -p /redis/data; \
+    chown -R redis:redis /redis/data; \
     apk del $buildDeps
 
 EXPOSE 6379
